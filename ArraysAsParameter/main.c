@@ -25,6 +25,20 @@ void changeArrayValue2(int* A, int length){
         A[i] = 200 + i;
     }
 }
+// Return as array
+
+int * arrayReturn(int length){
+
+      int *p;
+      p = (int *)malloc(length * sizeof(int));
+      int i = 0;
+
+      for (i = 0; i < length; i++){
+            p[i] = 400 + i;
+      }
+
+      return p;
+}
 
 // Return pointer
 int * pointerReturn(int length){
@@ -51,6 +65,9 @@ int main()
 
     int *B;
     B = pointerReturn(5);
+    printArray(B, 5);
+
+    B = arrayReturn(5);
     printArray(B, 5);
 
     return 0;

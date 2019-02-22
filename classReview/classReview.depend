@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1550780595 source:c:\users\farshad\desktop\datastructure\classreview\main.cpp
+	<iostream>
+	<Rectangle.h>
+
+1550780570 c:\users\farshad\desktop\datastructure\classreview\include\rectangle.h
+
+1550780624 source:c:\users\farshad\desktop\datastructure\classreview\src\rectangle.cpp
+	"Rectangle.h"
+
