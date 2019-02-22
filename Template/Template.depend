@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1550859474 source:c:\users\farshad\desktop\datastructure\template\main.cpp
+	<iostream>
+	<Arithmetic.h>
+
+1550859939 c:\users\farshad\desktop\datastructure\template\include\arithmetic.h
+	"implementation.h"
+
+1550859366 source:c:\users\farshad\desktop\datastructure\template\src\arithmetic.cpp
+	"Arithmetic.h"
+
+1550859923 c:\users\farshad\desktop\datastructure\template\include\implementation.h
+
