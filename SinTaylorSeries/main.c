@@ -36,6 +36,16 @@ double sin2(double x,double n){
     return res;
 }
 
+double sin3(double x,double n){
+    static double res = 1;
+    static double s = x;
+    sin3(x, n - 1);
+    s = (x*x/(2*n - 1)*(2*n - 2)* -1);
+    res = res*(s + 1);
+
+    return res;
+}
+
 int main()
 {
     printf("Sin Taylor Series!\n");
@@ -45,8 +55,12 @@ int main()
  //   printf("%lf\n", sin1(pi,15));
  //   printf("%lf\n", sin1(pi/2,15));
 
-    printf("%lf\n", sin2(pi/6,15));
+  //  printf("%lf\n", sin2(pi/6,15));
   //  printf("%lf\n", sin2(pi,15));
   //  printf("%lf\n", sin2(pi/2,15));
+
+  printf("%lf\n", sin3(pi/6,5));
+ //   printf("%lf\n", sin1(pi,15));
+ //   printf("%lf\n", sin1(pi/2,15));
     return 0;
 }
