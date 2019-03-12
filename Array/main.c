@@ -47,6 +47,19 @@ void Insert(struct Array2 *arr, int index, int x){
     }
 }
 
+int Delete(struct Array2 *arr, int index){
+    int i;
+    int x;
+    if(index >= 0 && index <= arr->length){
+        x = arr->A[index];
+        for(i = index; i < arr->length; i++){
+            arr->A[i] = arr->A[i + 1];
+        }
+        arr->length--;
+    }
+    return x;
+}
+
 int main()
 {
     /*
@@ -74,6 +87,9 @@ int main()
     Display2(arr2);
 
     Insert(&arr2, 2, 5);
+    Display2(arr2);
+
+    printf("\ndeleted: %d\n", Delete(&arr2, 6));
     Display2(arr2);
 
     return 0;
