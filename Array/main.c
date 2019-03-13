@@ -76,6 +76,60 @@ int search(struct Array2 *arr, int x){
     return -1;
 }
 
+int getArray(struct Array2 *arr, int i){
+    if(i >= 0 && i < arr->length){
+        return arr->A[i];
+    }
+    return -1;
+}
+
+void setArray(struct Array2 *arr, int i, int x){
+    if(i >= 0 && i < arr->length){
+        arr->A[i] = x;
+    }
+}
+
+int MaxArray(struct Array2 *arr){
+    int i = 0;
+    if (arr->length > 0){
+        int max = arr->A[0];
+        for(i = 1; i < arr->length; i++){
+            if(arr->A[i] > max){
+                max = arr->A[i];
+            }
+        }
+        return max;
+    }
+    return -1;
+}
+
+int MinArray(struct Array2 *arr){
+    int i = 0;
+    if (arr->length > 0){
+        int min = arr->A[0];
+        for(i = 1; i < arr->length; i++){
+            if(arr->A[i] < min){
+                min = arr->A[i];
+            }
+        }
+        return min;
+    }
+    return -1;
+}
+
+int SumArray(struct Array2 *arr){
+    int i = 0;
+    int total = 0;
+    for(i = 0; i < arr->length; i++){
+        total += arr->A[i];
+    }
+    return total;
+}
+
+float AvgArray(struct Array2 *arr){
+    return (float)SumArray(arr)/arr->length;
+}
+
 int Bsearch(struct Array2 *arr, int x){
     int start = 0;
     int end = arr->length - 1;
@@ -168,5 +222,25 @@ int main()
     printf("\nfind 10 at index: %d\n", Bsearch_r(&arr3, 0, arr3.length, 10));
     printf("\nfind 11 at index: %d\n", Bsearch_r(&arr3, 0, arr3.length, 11));
     printf("\nfind 5 at index: %d\n", Bsearch_r(&arr3, 0, arr3.length, 5));
+
+    printf("Get index 3: %d\n", getArray(&arr3, 3));
+    printf("Get index 0: %d\n", getArray(&arr3, 0));
+    printf("Get index 9: %d\n", getArray(&arr3, 9));
+
+    printf("Set index 0 to value 15!");
+    setArray(&arr3, 0, 15);
+    Display2(arr3);
+
+    printf("Max value in the array is: %d\n", MaxArray(&arr3));
+    printf("Max value in the array is: %d\n", MaxArray(&arr2));
+
+    printf("Min value in the array is: %d\n", MinArray(&arr3));
+    printf("Min value in the array is: %d\n", MinArray(&arr2));
+
+    printf("Sum value in the array is: %d\n", SumArray(&arr3));
+    printf("Sum value in the array is: %d\n", SumArray(&arr2));
+
+    printf("Average value in the array is: %lf\n", AvgArray(&arr3));
+    printf("Average value in the array is: %lf\n", AvgArray(&arr2));
     return 0;
 }
