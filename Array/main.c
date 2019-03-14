@@ -161,6 +161,82 @@ int Bsearch_r(struct Array2 *arr, int start, int end, int x){
     return -1;
 }
 
+void ReverseArray(struct Array2 *arr){
+    int i, j;
+    for(i = 0, j = arr->length - 1; i < j; i++, j--){
+        /*
+        int temp = arr->A[i];
+        arr->A[i] = arr->A[j];
+        arr->A[j] = temp;*/
+        swap(&arr->A[i], &arr->A[j]);
+    }
+}
+
+void ReverseArray2(struct Array2 *arr){
+    int i, j;
+    int *B = (int *)malloc(arr->length*sizeof(int));
+    for(i = 0, j = arr->length - 1; i < arr->length; i++, j--){
+        B[i] = arr->A[j];
+    }
+    for(i = 0; i < arr->length; i++){
+        arr->A[i] = B[i];
+    }
+}
+
+void RotateRightArray(struct Array2 *arr){
+    int i;
+    int temp = arr->A[arr->length - 1];
+    for(i = arr->length - 1; i >= 0 ; i--){
+        arr->A[i + 1] = arr->A[i];
+    }
+    arr->A[0] = temp;
+}
+
+void RotateLeftArray(struct Array2 *arr){
+    int i;
+    int temp = arr->A[0];
+    for(i = 0; i< arr->length ; i++){
+        arr->A[i] = arr->A[i + 1];
+    }
+    arr->A[arr->length - 1] = temp;
+}
+
+void InsertElement(struct Array2 *arr, int x){
+    int i = arr->length - 1;
+    if(arr->length == arr->size) return;
+
+    for(i = arr->length - 1; i >= 0; i--){
+        if(arr->A[i] >= x){
+            arr->A[i + 1] = arr->A[i];
+        } else{
+            break;
+        }
+    }
+    arr->A[i + 1] = x;
+    arr->length++;
+}
+
+int isSorted(struct Array2 *arr){
+    int i = 0;
+    for(i = 0; i < arr->length - 1; i++){
+        if(arr->A[i] > arr->A[i + 1]){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+void ReArrange(struct Array2 * arr){
+    int i = 0;
+    int j = arr->length - 1;
+    while(i < j){
+        while(arr->A[i] < 0) i++;
+        while(arr->A[j] >= 0) j--;
+        if(i < j)
+            swap(&arr->A[i], &arr->A[j]);
+    }
+}
+
 int main()
 {
     /*
@@ -242,5 +318,42 @@ int main()
 
     printf("Average value in the array is: %lf\n", AvgArray(&arr3));
     printf("Average value in the array is: %lf\n", AvgArray(&arr2));
+
+    Display2(arr3);
+    printf("Reverse the array\n");
+    ReverseArray(&arr3);
+    Display2(arr3);
+    ReverseArray2(&arr3);
+    Display2(arr3);
+
+    printf("Rotate the array to the right\n");
+    RotateRightArray(&arr3);
+    Display2(arr3);
+    printf("Rotate the array to the left\n");
+    RotateLeftArray(&arr3);
+    Display2(arr3);
+    printf("Rotate the array to the left\n");
+    RotateLeftArray(&arr3);
+    Display2(arr3);
+
+    printf("Insert number 5\n");
+    InsertElement(&arr3, 5);
+    Display2(arr3);
+    printf("Insert number 9\n");
+    InsertElement(&arr3, 9);
+    Display2(arr3);
+    printf("Insert number 14\n");
+    InsertElement(&arr3, 14);
+    Display2(arr3);
+    printf("is sorted or not: %d\n", isSorted(&arr3));
+    Display2(arr2);
+    printf("is sorted or not: %d\n", isSorted(&arr2));
+
+    struct Array2 arr4 = {{-6,3,-8,10,5, -7, -9, 12, -4, 2},20, 10};
+    Display2(arr4);
+    printf("Rearrange\n");
+    ReArrange(&arr4);
+    Display2(arr4);
+
     return 0;
 }
