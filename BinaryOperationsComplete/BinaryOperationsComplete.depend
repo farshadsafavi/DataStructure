@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1552841042 source:c:\users\farshad\desktop\datastructure\binaryoperationscomplete\main.c
+	<stdio.h>
+	<stdlib.h>
+
