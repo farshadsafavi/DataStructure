@@ -47,6 +47,17 @@ void Insert(struct Array2 *arr, int index, int x){
     }
 }
 
+void Insert1(struct Array *arr, int index, int x){
+    int i;
+    if(index >= 0 && index <= arr->length){
+        for(i = arr->length; i > index; i--){
+            arr->A[i] = arr->A[i - 1];
+        }
+        arr->A[index] = x;
+        arr->length++;
+    }
+}
+
 int Delete(struct Array2 *arr, int index){
     int i;
     int x;
@@ -59,6 +70,21 @@ int Delete(struct Array2 *arr, int index){
     }
     return x;
 }
+
+int Delete1(struct Array *arr, int index){
+    int i;
+    int x;
+    if(index >= 0 && index <= arr->length){
+        x = arr->A[index];
+        for(i = index; i < arr->length; i++){
+            arr->A[i] = arr->A[i + 1];
+        }
+        arr->length--;
+    }
+    return x;
+}
+
+
 void swap(int *x, int *y){
     int temp = *y;
     *y = *x;
@@ -66,6 +92,17 @@ void swap(int *x, int *y){
 }
 
 int search(struct Array2 *arr, int x){
+    int i;
+    for(i = 0; i < arr->length; i++){
+        if(arr->A[i] == x){
+            swap(&arr->A[0], &arr->A[i]);
+            return i;
+        }
+    }
+    return -1;
+}
+
+int search1(struct Array *arr, int x){
     int i;
     for(i = 0; i < arr->length; i++){
         if(arr->A[i] == x){
@@ -118,6 +155,15 @@ int MinArray(struct Array2 *arr){
 }
 
 int SumArray(struct Array2 *arr){
+    int i = 0;
+    int total = 0;
+    for(i = 0; i < arr->length; i++){
+        total += arr->A[i];
+    }
+    return total;
+}
+
+int SumArray1(struct Array *arr){
     int i = 0;
     int total = 0;
     for(i = 0; i < arr->length; i++){
@@ -239,24 +285,48 @@ void ReArrange(struct Array2 * arr){
 
 int main()
 {
-    /*
+
     printf("Create an array!\n");
     struct Array arr;
     printf("Enter size of an array: ");
     scanf("%d", &arr.size);
     arr.A = (int *)malloc(arr.size*sizeof(int));
     arr.length = 0;
+    int ch;
+    int x, index;
+    do{
+        printf("\n\nMenu\n");
+        printf("1. Insert\n");
+        printf("2. Delete\n");
+        printf("3. Search\n");
+        printf("4. Sum\n");
+        printf("5. Display\n");
+        printf("6.Exit\n");
 
-    int n,i;
-    printf("Enter number of elements: ");
-    scanf("%d", &n);
-    printf("Enter all elements: \n");
-    for(i = 0; i < n; i++){
-        scanf("%d", &arr.A[i]);
-        arr.length = i+1;
-    }
-    Display(arr);
-    */
+        printf("enter you choice ");
+        scanf("%d",&ch);
+
+        switch(ch){
+            case 1: printf("Enter an element and index");
+                    scanf("%d%d",&x,&index);
+                    Insert1(&arr,index,x);
+                    break;
+            case 2: printf("Enter index ");
+                    scanf("%d",&index);
+                    x=Delete1(&arr,index);
+                    printf("Deleted Element is %d\n",x);
+                    break;
+            case 3:printf("Enter element to search ");
+                    scanf("%d",&x);
+                    index=search1(&arr,x);
+                    printf("Element index %d",index);
+                    break;
+            case 4:printf("Sum is %d\n",SumArray1(&arr));
+                    break;
+            case 5:Display(arr);
+        }
+    }while(ch<6);
+
     struct Array2 arr2 = {{6,7,8,9,10},20, 5};
     Display2(arr2);
 
@@ -276,7 +346,7 @@ int main()
     printf("\nfind 5 at index: %d\n", search(&arr2, 5));
     Display2(arr2);
 
-    int x = 5;
+    x = 5;
     int y = 4;
     swap(&x, &y);
     printf("\nx = %d and y = %d\n", x, y);
@@ -354,6 +424,8 @@ int main()
     printf("Rearrange\n");
     ReArrange(&arr4);
     Display2(arr4);
+
+
 
     return 0;
 }
