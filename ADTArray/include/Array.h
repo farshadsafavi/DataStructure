@@ -17,6 +17,14 @@ class Array
         void Display();
         void Insert(int index, int x);
         int Delete(int index);
+        int LinearSearch(int x);
+        int BinarySearch(int x);
+        int Get(int index);
+        void Set(int index, int x);
+        int Max();
+        int Min();
+        int Sum();
+        double Average();
         virtual ~Array();
 
 
