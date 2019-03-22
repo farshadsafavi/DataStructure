@@ -134,6 +134,57 @@ double Array::Average(){
     return (double) Sum()/this->length;
 }
 
+void Array::Swap(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void Array::Reverse(){
+    int i = 0;
+    int j = this->length - 1;
+    while(i <= j){
+        Swap(&this->A[i++], &this->A[j--]);
+    }
+}
+
+void Array::RotateLeft(){
+    int temp = this->A[0];
+    for(int i = 0; i < this->length - 1; i++){
+        this->A[i] = this->A[i + 1];
+    }
+    Swap(&temp, &this->A[this->length - 1]);
+}
+
+void Array::RotateRight(){
+    int temp = this->A[this->length - 1];
+    for(int i = this->length - 1; i > 0; i--){
+        this->A[i] = this->A[i - 1];
+    }
+    Swap(&temp, &this->A[0]);
+}
+
+bool Array::isSorted(){
+    for(int i = 0; i < this->length - 1; i++){
+        if(this->A[i + 1] < this->A[i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+void Array::Rearrange(){
+    int i = 0;
+    int j = this->length - 1;
+    while(i < j){
+        while(this->A[i] < 0) i++;
+        while(this->A[j] > 0) j--;
+        if(i < j){
+            Swap(&this->A[i], &this->A[j]);
+        }
+    }
+
+}
 
 Array::~Array()
 {

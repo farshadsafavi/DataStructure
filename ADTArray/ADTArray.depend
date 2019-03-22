@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1552964834 source:c:\users\farshad\desktop\datastructure\adtarray\main.cpp
+1553289790 source:c:\users\farshad\desktop\datastructure\adtarray\main.cpp
 	<iostream>
 	<Array.h>
 
-1552964688 c:\users\farshad\desktop\datastructure\adtarray\include\array.h
+1553289695 c:\users\farshad\desktop\datastructure\adtarray\include\array.h
 	<iostream>
 
-1552964912 source:c:\users\farshad\desktop\datastructure\adtarray\src\array.cpp
+1553289695 source:c:\users\farshad\desktop\datastructure\adtarray\src\array.cpp
 	"Array.h"
 

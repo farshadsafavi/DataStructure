@@ -9,6 +9,7 @@ class Array
         int *A;
         int arraySize;
         int length;
+        void Swap(int *a, int *b);
     public:
         Array();
         Array(int arraySize);
@@ -24,7 +25,12 @@ class Array
         int Max();
         int Min();
         int Sum();
+        void Reverse();
+        void RotateRight();
+        void RotateLeft();
         double Average();
+        bool isSorted();
+        void Rearrange();
         virtual ~Array();
 
 

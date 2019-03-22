@@ -66,5 +66,43 @@ int main()
     cout <<"Min:" <<arr2.Min() << endl;
     cout <<"Sum:" <<arr2.Sum() << endl;
     cout <<"Average:" <<arr2.Average() << endl;
+
+    arr2.Display();
+    arr2.Reverse();
+    arr2.Display();
+
+    arr2.Display();
+    arr2.RotateLeft();
+    arr2.Display();
+
+    arr2.Display();
+    arr2.RotateRight();
+
+    bool temp = arr2.isSorted();
+    if (temp){
+        cout <<"It is sorted!" << endl;
+    } else{
+        cout <<"NOT sorted!" << endl;
+    }
+
+    arr2.Reverse();
+    temp = arr2.isSorted();
+    if (temp){
+        cout <<"It is sorted!" << endl;
+    } else{
+        cout <<"NOT sorted!" << endl;
+    }
+
+    Array arr3 = Array(10);
+    arr3.Append(2);
+    arr3.Append(-3);
+    arr3.Append(5);
+    arr3.Append(-7);
+    arr3.Append(-5);
+    arr3.Append(1);
+
+    arr3.Display();
+    arr3.Rearrange();
+    arr3.Display();
     return 0;
 }
