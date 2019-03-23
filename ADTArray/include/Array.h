@@ -31,6 +31,9 @@ class Array
         double Average();
         bool isSorted();
         void Rearrange();
+        Array* Merge(Array *arr);
+        Array* Union(Array *arr);
+        Array* Intersection(Array *arr);
         virtual ~Array();
 
 

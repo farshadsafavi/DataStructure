@@ -103,6 +103,21 @@ int main()
 
     arr3.Display();
     arr3.Rearrange();
-    arr3.Display();
+
+    Array arr4 = Array();
+    arr4.Append(15);
+    arr4.Append(15);
+    arr4.Append(15);
+    arr4.Append(15);
+    arr4.Display();
+    Array *arr5 = arr4.Merge(&arr2);
+    arr5->Display();
+    Array *arr6 = arr4.Union(&arr2);
+    arr6->Display();
+    Array *arr7 = arr4.Intersection(arr5);
+    arr7->Display();
+    Array *arr8 = arr4.Intersection(arr6);
+    arr8->Display();
+
     return 0;
 }

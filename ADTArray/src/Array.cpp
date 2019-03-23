@@ -186,6 +186,75 @@ void Array::Rearrange(){
 
 }
 
+Array* Array::Merge(Array* arr){
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    Array* res = new Array(this->length + arr->length);
+    res->length = this->length + arr->length;
+    while(i < this->length && j < arr->length){
+        if(this->A[i] < arr->A[j]){
+            res->A[k++] = this->A[i++];
+        } else{
+            res->A[k++] = arr->A[j++];
+        }
+    }
+    while(i < this->length){
+        res->A[k++] = this->A[i++];
+    }
+    while(j < arr->length){
+        res->A[k++] = arr->A[j++];
+    }
+    return res;
+}
+
+Array* Array::Union(Array* arr){
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    Array* res = new Array(this->length + arr->length);
+    while(i < this->length && j < arr->length){
+        if(this->A[i] < arr->A[j]){
+            res->A[k++] = this->A[i++];
+            res->length++;
+        } else if(this->A[i] > arr->A[j]){
+            res->A[k++] = arr->A[j++];
+            res->length++;
+        } else{
+            i++;
+        }
+    }
+    while(i < this->length){
+        res->A[k++] = this->A[i++];
+        res->length++;
+    }
+    while(j < arr->length){
+        res->A[k++] = arr->A[j++];
+        res->length++;
+    }
+    return res;
+}
+
+Array* Array::Intersection(Array* arr){
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    Array* res = new Array(this->length + arr->length);
+    while(i < this->length && j < arr->length){
+        if(this->A[i] < arr->A[j]){
+            i++;
+        } else if(this->A[i] > arr->A[j]){
+            j++;
+        } else{
+            res->A[k++] = this->A[i++];
+            j++;
+            res->length++;
+        }
+    }
+
+    return res;
+}
+
 Array::~Array()
 {
     cout <<"De-Construct array"<<endl;
