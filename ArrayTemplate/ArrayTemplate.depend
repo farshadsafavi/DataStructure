@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1553466687 source:c:\users\farshad\desktop\datastructure\arraytemplate\main.cpp
+	<iostream>
+	<Arrays.h>
+
+1553465918 c:\users\farshad\desktop\datastructure\arraytemplate\include\array.h
+	<iostream>
+
+1553465790 source:c:\users\farshad\desktop\datastructure\arraytemplate\src\array.cpp
+	"Array.h"
+
+1553466260 source:c:\users\farshad\desktop\datastructure\arraytemplate\src\arrays.cpp
+	"Arrays.h"
+
+1553467500 c:\users\farshad\desktop\datastructure\arraytemplate\include\arrays.h
+	<iostream>
+	"implementation.h"
+
+1553467490 c:\users\farshad\desktop\datastructure\arraytemplate\include\implementation.h
+
