@@ -87,20 +87,20 @@ int numberOfWords(char *word){
     return n;
 }
 
-char* reverseString(char *word){
+char* reverseString(char word[]){
     int i =0;
     int n = 0;
     for( i = 0 ; word[i] != '\0';i++){
         n++;
     }
     int j = 0;
+    char temp;
     printf("Length %d\n", n);
-    for( i = 0, j = n - 1; i < j;i++, j--){
-        char temp = word[i];
+    for(i = 0, j = n - 1; i < j;i++, j--){
+        temp = word[i];
         word[i] = word[j];
         word[j] = temp;
     }
-
     return word;
 }
 
@@ -112,7 +112,7 @@ void reverseString2(char *word){
     printf("Length %d\n", i);
     char reverse[i];
     i = 0;
-    while(j >= 0){
+    while(j >= -1){
         reverse[i++] = word[j--];
     }
     reverse[i - 1] = '\0';
@@ -134,8 +134,39 @@ bool validString(char *word){
     return valid;
 }
 
+void compareStrings(char *word1, char *word2){
+    int i = 0;
+    int j = 0;
+    printf("start comparing:\n");
+    for(i = 0, j = 0; word1[i] !='\0' && word2[j] != '\0'; i++, j++){
+        printf("%c and %c\n", word1[i],word2[j]);
+        if(word1[i] != word2[j]){
+            break;
+        }
+    }
+    if(word1[i] == word2[j]) printf("Equal!\n");
+    else if(word1[i] > word2[j]) printf("Greater!\n");
+    else printf("Smaller!\n");
+
+}
+
+bool palindrome(char *word){
+    int i = 0;
+    int j = 0;
+    int n = 0;
+    bool palindrom = true;
+    for(n = 0; word[n] != '\0';n++){
+    }
+    for( i = 0, j = n - 1 ; i < j;i++, j--){
+        if(word[i] != word[j]) return false;
+    }
+
+    return palindrom;
+}
+
 int main()
 {
+
     printf("Strings\n");
     printf("%c is %d\n", 'A', 'A');
     printf("%c is %d\n", 'Z', 'Z');
@@ -196,5 +227,18 @@ int main()
     printf(reverseString(complete_name));
     printf("\n");
     reverseString2(complete_name);
+
+    char *name1 = "painting";
+    char *name2 = "painted";
+    compareStrings(name1, name2);
+
+    char name3[] = "Salama";
+    compareStrings("Salama", reverseString(name3));
+
+    compareStrings(name1, name2);
+    char *name5 = "madam";
+    printf("%d\n", palindrome(name5));
+    char *name6 = "abbccbba";
+    printf("%d\n", palindrome(name6));
     return 0;
 }
