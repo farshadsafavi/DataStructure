@@ -220,6 +220,39 @@ void findDuplicate3(char word[]){
     }
 }
 
+
+void anagram(char word1[], char word2[]){
+    int i = 0;
+    int len1 = 0, len2 = 0;
+    for(i = 0; word1[i] != '\0'; i++){
+        len1++;
+    }
+    for(i = 0; word2[i] != '\0'; i++){
+        len2++;
+    }
+    char H[26];
+    for(i = 0; i < 26; i++){
+        H[i] = 0;
+    }
+    if(len1 == len2){
+        for(i = 0; word1[i] != '\0'; i++){
+            H[word1[i] - 'a'] += 1;
+        }
+        for(i = 0; word2[i] != '\0'; i++){
+            H[word2[i]- 'a'] -= 1;
+            if(H[word2[i] - 'a'] < 0){
+
+                printf("It is not anagram!\n");
+            }
+        }
+        printf("****** Anagram ******\n");
+
+    } else{
+        printf("Not an anagram!\n");
+    }
+}
+
+
 int main()
 {
     /*
@@ -300,6 +333,7 @@ int main()
     //printf("%d\n", palindrome(name6));
     //findDuplicate(name6);
     //findDuplicate2(name6);
-    findDuplicate3(name6);
+    //findDuplicate3(name6);
+    anagram("medical", "decimal");
     return 0;
 }
