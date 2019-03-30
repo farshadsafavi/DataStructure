@@ -164,9 +164,65 @@ bool palindrome(char *word){
     return palindrom;
 }
 
+void findDuplicate(char word[]){
+    int i = 0;
+    int n;
+    for(n = 0; word[n] != '\0';n++){
+    }
+    printf("%d", n);
+
+    int j = 0;
+    for(i = 0; i < n - 1;i++){
+        int count = 1;
+        printf("%c\n",word[i]);
+        if(word[i] != 0){
+            for(j = i + 1; j < n; j++){
+                if(word[i] == word[j]){
+                    word[j] = 0;
+                    count++;
+                }
+            }
+            printf("%c is repeated %d times.\n", word[i], count);
+        }
+    }
+
+}
+
+void findDuplicate2(char word[]){
+    int i = 0;
+    int n = 0;
+    char H[26];
+    for(i = 0; i < 26; i++){
+        H[i] = 0;
+    }
+    for(n = 0; word[n] != '\0';n++){
+        H[word[n] - 'a'] += 1;
+    }
+
+    for(i = 0;i < 26; i++){
+        if(H[i] > 1)
+            printf("%c is repeated %d times.\n", i + 'a', H[i]);
+    }
+
+}
+
+void findDuplicate3(char word[]){
+    int i = 0;
+    long int H = 0, x;
+    for(i = 0; word[i] != '\0'; i++){
+        x = 1;
+        x = x << word[i] - 'a';
+        if(H & x > 0){
+            printf("duplicate letter is %c\n", word[i]);
+        } else{
+            H = H | x;
+        }
+    }
+}
+
 int main()
 {
-
+    /*
     printf("Strings\n");
     printf("%c is %d\n", 'A', 'A');
     printf("%c is %d\n", 'Z', 'Z');
@@ -191,6 +247,7 @@ int main()
     printf("z contains %s\n", z);
     char m[] = {66, 67, 68, 69, '\0'};
     printf("m contains %s\n", m);
+
 
     // create string
     char n[] = "Farshad";
@@ -238,7 +295,11 @@ int main()
     compareStrings(name1, name2);
     char *name5 = "madam";
     printf("%d\n", palindrome(name5));
-    char *name6 = "abbccbba";
-    printf("%d\n", palindrome(name6));
+    */
+    char name6[] = "abbccbba";
+    //printf("%d\n", palindrome(name6));
+    //findDuplicate(name6);
+    //findDuplicate2(name6);
+    findDuplicate3(name6);
     return 0;
 }
