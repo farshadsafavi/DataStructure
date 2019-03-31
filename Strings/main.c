@@ -252,6 +252,46 @@ void anagram(char word1[], char word2[]){
     }
 }
 
+void swap(char word[], int l, int i){
+    char temp = word[i];
+    word[i] = word[l];
+    word[l] = temp;
+}
+
+void permutation2(char word[], int l, int h){
+    int i;
+    if(l == h){
+        printf("%s\n", word);
+    } else{
+       for(i = l; i <= h; i++){
+            swap(word, l, i);
+            permutation2(word, l + 1, h);
+            swap(word, l, i);
+       }
+    }
+}
+
+
+
+void permutation(char word[], int k){
+    static int A[10];
+    static char res[10];
+    int i = 0;
+    if(word[k] == '\0'){
+        res[k] = '\0';
+        printf("%s\n", res);
+    } else{
+        for(i = 0; word[i] != '\0'; i++){
+                if(A[i] == 0){
+                res[k] = word[i];
+                A[i] = 1;
+                permutation(word, k + 1);
+                A[i] = 0;
+            }
+        }
+    }
+}
+
 
 int main()
 {
@@ -334,6 +374,9 @@ int main()
     //findDuplicate(name6);
     //findDuplicate2(name6);
     //findDuplicate3(name6);
-    anagram("medical", "decimal");
+    //anagram("medical", "decimal");
+    char name7[] = "abc";
+    //permutation(name7, 0);
+    permutation2(name7, 0, 2);
     return 0;
 }
