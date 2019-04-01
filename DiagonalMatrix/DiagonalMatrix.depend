@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1554159521 source:c:\users\farshad\desktop\datastructure\diagonalmatrix\main.cpp
+	<iostream>
+	<Diagonal.h>
+
+1554159559 source:c:\users\farshad\desktop\datastructure\diagonalmatrix\src\diagonal.cpp
+	"Diagonal.h"
+
+1554159428 c:\users\farshad\desktop\datastructure\diagonalmatrix\include\diagonal.h
+	<iostream>
+
