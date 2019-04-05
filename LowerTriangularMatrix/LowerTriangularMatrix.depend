@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1554488882 source:c:\users\farshad\desktop\datastructure\lowertriangularmatrix\main.cpp
+	<iostream>
+	<TriangularMatrix.h>
+
+1554488842 c:\users\farshad\desktop\datastructure\lowertriangularmatrix\include\triangularmatrix.h
+	<iostream>
+
+1554488929 source:c:\users\farshad\desktop\datastructure\lowertriangularmatrix\src\triangularmatrix.cpp
+	"TriangularMatrix.h"
+
