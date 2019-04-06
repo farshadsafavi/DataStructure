@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1554503943 source:c:\users\farshad\desktop\datastructure\uppertriangular\src\uppertriangular.cpp
+1554566685 source:c:\users\farshad\desktop\datastructure\uppertriangular\src\uppertriangular.cpp
 	"UpperTriangular.h"
 
-1554502766 c:\users\farshad\desktop\datastructure\uppertriangular\include\uppertriangular.h
+1554566685 c:\users\farshad\desktop\datastructure\uppertriangular\include\uppertriangular.h
 	<iostream>
 
 1554503031 source:c:\users\farshad\desktop\datastructure\uppertriangular\main.cpp

@@ -14,10 +14,10 @@ int main()
     for(int i = 1; i <= d; i++){
         for(int j = 1; j <= d; j++){
             cin >> x;
-            um.Set(i, j, x);
+            um.Set2(i, j, x);
         }
     }
     cout <<"\n\n";
-    um.Display();
+    um.Display2();
     return 0;
 }

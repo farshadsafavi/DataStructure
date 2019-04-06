@@ -14,6 +14,9 @@ class UpperTriangular
         void Set(int i,int j, int x);
         int Get(int i, int j);
         void Display();
+        void Set2(int i,int j, int x);
+        int Get2(int i, int j);
+        void Display2();
         virtual ~UpperTriangular();
 
 
