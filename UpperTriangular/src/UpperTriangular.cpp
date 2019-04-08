@@ -53,3 +53,19 @@ void UpperTriangular::Display2(){
         cout << endl;
     }
 }
+
+void UpperTriangular::DisplaySymmetric(){
+    for(int i = 1; i <= this->n; i++){
+        for(int j = 1; j <= this->n; j++){
+            cout << GetSymmetric( i,  j) <<" ";
+        }
+        cout << endl;
+    }
+}
+
+int UpperTriangular::GetSymmetric(int i, int j){
+    if(j >= i)
+        return this->A[((j-1)*j/2) + (i - 1)];
+    else
+        return this->A[((i-1)*i/2) + (j - 1)];
+}

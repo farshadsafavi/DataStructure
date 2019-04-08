@@ -19,5 +19,7 @@ int main()
     }
     cout <<"\n\n";
     um.Display2();
+    cout <<"\n\n";
+    um.DisplaySymmetric();
     return 0;
 }

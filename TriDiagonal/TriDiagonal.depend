@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1554680134 source:c:\users\farshad\desktop\datastructure\tridiagonal\main.cpp
+	<iostream>
+	<TriDiagonal.h>
+
+1554680134 c:\users\farshad\desktop\datastructure\tridiagonal\include\tridiagonal.h
+	<iostream>
+
+1554680349 source:c:\users\farshad\desktop\datastructure\tridiagonal\src\tridiagonal.cpp
+	"TriDiagonal.h"
+

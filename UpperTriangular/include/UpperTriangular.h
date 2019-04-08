@@ -17,6 +17,8 @@ class UpperTriangular
         void Set2(int i,int j, int x);
         int Get2(int i, int j);
         void Display2();
+        int GetSymmetric(int i, int j);
+        void DisplaySymmetric();
         virtual ~UpperTriangular();
 
 
