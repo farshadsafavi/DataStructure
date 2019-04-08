@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1554760215 source:c:\users\farshad\desktop\datastructure\toeplitz\main.cpp
+	<iostream>
+	<ToeplitsMatrix.h>
+
+1554759204 c:\users\farshad\desktop\datastructure\toeplitz\include\toeplitsmatrix.h
+	<iostream>
+
+1554759411 source:c:\users\farshad\desktop\datastructure\toeplitz\src\toeplitsmatrix.cpp
+	"ToeplitsMatrix.h"
+
