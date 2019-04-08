@@ -2,7 +2,7 @@
 
 TriDiagonal::TriDiagonal(int n)
 {
-    int *A = new int[3*n - 2];
+    this->A = new int[3*n - 2];
     this->Size = 3*n - 2;
     this->n = n;
 }

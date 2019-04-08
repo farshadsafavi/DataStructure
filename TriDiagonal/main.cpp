@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     cout << "Tri-Diagonal:" << endl;
-    int n;
+    int n = 0;
     cout <<"Please enter the dimension:";
     cin >> n;
     TriDiagonal td(n);
@@ -21,7 +21,6 @@ int main()
         cout <<"3: Display the value:\n";
         cout <<"0: Terminate!:\n";
         cin >> ch;
-        int x = 0;
         switch(ch){
             case 1:
                 td.Create();
