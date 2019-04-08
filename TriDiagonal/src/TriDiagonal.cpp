@@ -42,7 +42,7 @@ void TriDiagonal::Display(){
 
 void TriDiagonal::Create(){
     std::cout <<"Please enter the Triangle Matrix:\n";
-    int x;
+    int x = 0;
     for(int i = 1; i <= this->n; i++){
         for(int j = 1; j <= this->n; j++){
             std::cin >> x;
