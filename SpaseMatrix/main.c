@@ -44,6 +44,10 @@ void Display(struct Sparse *s){
     }
 }
 
+struct Sparse* Add(struct Sparse *s1, struct Sparse *s2){
+
+}
+
 int main()
 {
     printf("Sparse Matrix:\n");
