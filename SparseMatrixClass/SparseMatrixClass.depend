@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1555107081 source:c:\users\farshad\desktop\datastructure\sparsematrixclass\main.cpp
+	<iostream>
+	<Sparse.h>
+
+1555101916 source:c:\users\farshad\desktop\datastructure\sparsematrixclass\src\element.cpp
+	"Element.h"
+
+1555107678 c:\users\farshad\desktop\datastructure\sparsematrixclass\include\element.h
+	<iostream>
+
+1555106602 source:c:\users\farshad\desktop\datastructure\sparsematrixclass\src\sparse.cpp
+	"Sparse.h"
+	<Element.h>
+
+1555105660 c:\users\farshad\desktop\datastructure\sparsematrixclass\include\sparse.h
+	<Element.h>
+
