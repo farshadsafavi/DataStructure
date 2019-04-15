@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1555365404 source:c:\users\farshad\desktop\datastructure\operatoroverloading\main.cpp
+	<iostream>
+	<Complex.h>
+
+1555365320 source:c:\users\farshad\desktop\datastructure\operatoroverloading\src\complex.cpp
+	"Complex.h"
+
+1555365864 c:\users\farshad\desktop\datastructure\operatoroverloading\include\complex.h
+	<iostream>
+
