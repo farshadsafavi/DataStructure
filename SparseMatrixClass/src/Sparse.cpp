@@ -38,41 +38,41 @@ void Sparse::Display(){
     cout <<endl;
 }
 
-Sparse* Sparse::Add(Sparse *s1, Sparse *s2){
-    Sparse *res = new Sparse(s1->row, s1->col, s1->num + s2->num);
+Sparse operator+(Sparse &s1, Sparse &s2){
+    Sparse res(s1.row, s1.col, s1.num + s2.num);
     int cnt = 0;
-    if(s1->col != s2->col || s1->row != s2->row){
+    if(s1.col != s2.col || s1.row != s2.row){
         return res;
     }
-    res->e = new Element[res->num];
+    res.e = new Element[res.num];
     int i = 0, j = 0;
 
-    while(i < s1->num && j <s2->num){
-        if(s1->e[i].get_i() <s2->e[j].get_i()){
-            res->e[cnt++] = s1->e[i++];
-        } else if(s1->e[i].get_i() > s2->e[j].get_i()){
-            res->e[cnt++] = s2->e[j++];
+    while(i < s1.num && j <s2.num){
+        if(s1.e[i].get_i() <s2.e[j].get_i()){
+            res.e[cnt++] = s1.e[i++];
+        } else if(s1.e[i].get_i() > s2.e[j].get_i()){
+            res.e[cnt++] = s2.e[j++];
         } else{
-            if(s1->e[i].get_j() < s2->e[j].get_j()){
-                res->e[cnt++] = s1->e[i++];
-            } else if(s1->e[i].get_j() > s2->e[j].get_j()){
-                res->e[cnt++] = s2->e[j++];
+            if(s1.e[i].get_j() < s2.e[j].get_j()){
+                res.e[cnt++] = s1.e[i++];
+            } else if(s1.e[i].get_j() > s2.e[j].get_j()){
+                res.e[cnt++] = s2.e[j++];
             } else{
-                res->e[cnt] = s2->e[j];
-                res->e[cnt++].set_val(s1->e[i].get_val() + s2->e[j].get_val());
+                res.e[cnt] = s2.e[j];
+                res.e[cnt++].set_val(s1.e[i].get_val() + s2.e[j].get_val());
                 i++;
                 j++;
             }
         }
     }
-    while(i < s1->num){
-        res->e[cnt++] = s1->e[i++];
+    while(i < s1.num){
+        res.e[cnt++] = s1.e[i++];
     }
-    while(j < s2->num){
-        res->e[cnt++] = s2->e[j++];
+    while(j < s2.num){
+        res.e[cnt++] = s2.e[j++];
     }
 
-    res->num = cnt;
+    res.num = cnt;
     return res;
 }
 

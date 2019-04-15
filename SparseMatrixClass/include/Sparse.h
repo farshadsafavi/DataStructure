@@ -12,7 +12,7 @@ class Sparse
     public:
         Sparse(int row, int col, int num);
         void Create();
-        Sparse* Add(Sparse *s1, Sparse *s2);
+        friend Sparse operator+(Sparse &s1, Sparse &s2);
         void Display();
         virtual ~Sparse();
 

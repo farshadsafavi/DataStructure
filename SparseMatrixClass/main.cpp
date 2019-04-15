@@ -23,7 +23,7 @@ int main()
     s2.Create();
     s2.Display();
     cout <<"Result:\n";
-    Sparse *s3 = s3->Add(&s1, &s2);
-    s3->Display();
+    Sparse s3 = s1 + s2;
+    s3.Display();
     return 0;
 }
