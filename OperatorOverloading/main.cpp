@@ -10,12 +10,13 @@ int main()
     Complex c3;
 
     c3 = c1.Add(c2);
-    c3.Display();
+    //c3.Display();
 
     Complex c4(4, 7);
     Complex c5(6, 9);
     c3 = c4 + c5;
-    c3.Display();
+    //c3.Display();
+    cout << c3 << endl;
 
     return 0;
 }

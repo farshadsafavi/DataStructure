@@ -33,6 +33,11 @@ Complex operator+(Complex c1,Complex c2){
      return temp;
 }
 
+ostream& operator<<(ostream &O, Complex &c){
+    O <<c.real <<" + i" <<c.img <<endl;
+    return O;
+}
+
 void Complex::Display(){
     cout <<this->real <<" + i" <<this->img <<endl;
 }
