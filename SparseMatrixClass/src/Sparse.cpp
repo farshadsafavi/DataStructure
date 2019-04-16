@@ -23,19 +23,20 @@ void Sparse::Create(){
     }
 }
 
-void Sparse::Display(){
+ostream& operator<<(ostream &o, Sparse &s){
     int c = 0;
-    for(int i = 0; i < this->row; i++){
-        for(int j = 0; j < this->col; j++){
-            if(this->e[c].get_i() == i && this->e[c].get_j() == j){
-                cout <<this->e[c++].get_val() << " ";
+    for(int i = 0; i < s.row; i++){
+        for(int j = 0; j < s.col; j++){
+            if(s.e[c].get_i() == i && s.e[c].get_j() == j){
+                o <<s.e[c++].get_val() << " ";
             } else{
-                cout <<"0 ";
+                o <<"0 ";
             }
         }
         cout <<endl;
     }
     cout <<endl;
+    return o;
 }
 
 Sparse operator+(Sparse &s1, Sparse &s2){
