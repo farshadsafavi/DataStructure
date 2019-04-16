@@ -23,6 +23,17 @@ void Sparse::Create(){
     }
 }
 
+istream& operator>>(istream &i, Sparse &s){
+    int r, c, v;
+    int cnt= 0;
+    for(int i = 0; i < s.num; i++){
+        cout <<"Please enter number i, j, val:";
+        cin >> r >> c >> v;
+        s.e[cnt++] = Element(r, c, v);
+    }
+    return i;
+}
+
 ostream& operator<<(ostream &o, Sparse &s){
     int c = 0;
     for(int i = 0; i < s.row; i++){

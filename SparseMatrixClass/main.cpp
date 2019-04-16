@@ -12,7 +12,7 @@ int main()
     cout <<"Please enter number of elements:";
     cin >> num;
     Sparse s1(row, col, num);
-    s1.Create();
+    cin >> s1;
     cout <<s1<<endl;
     cout <<"Please enter Second Matrix the dimensions(row and column):";
     int row2, col2, num2;
@@ -20,7 +20,7 @@ int main()
     cout <<"Please enter number of elements:";
     cin >> num2;
     Sparse s2(row2, col2, num2);
-    s2.Create();
+    cin >> s2;
     cout <<s2<<endl;;
     cout <<"Result:\n";
     Sparse s3 = s1 + s2;
