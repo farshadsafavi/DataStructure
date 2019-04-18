@@ -112,8 +112,56 @@ int MaxR(struct Node *p){
     }
 }
 
+struct Node* Search(struct Node *c, int key){
+    struct Node *p;
+    while(c != NULL){
+        printf("%d \n", c->value);
+        if(c->value == key){
+            p->next = c->next;
+            c->next = first;
+            first = c;
+            return c;
+        }
+        p = c;
+        c = c->next;
+    }
+    printf("\n");
+    return NULL;
+}
+
+struct Node* SearchRec(struct Node *c, int key){
+    if(c == NULL)
+        return NULL;
+    if(c->value == key){
+        return c;
+    }
+    return SearchRec(c->next, key);
+}
+
+void Insert(struct Node *c, int pos, int val){
+    int i;
+
+    if(pos < 0 || pos > Count(first))
+        return;
+
+    struct Node* n = (struct Node *)malloc(sizeof(struct Node));
+    n->value = val;
+    if(pos == 0){
+        n->next = first;
+        first = n;
+    } else{
+        for(i = 0; i < pos - 1; i++){
+            c = c->next;
+        }
+        n->next = c->next;
+        c->next = n;
+    }
+
+}
+
 int main()
 {
+    /*
     printf("Linked List:\n");
     int A[] = {3, 5, 7, 32, 15, 17 , 18 , 19};
     create(A, 8);
@@ -128,6 +176,24 @@ int main()
     printf("Max is: %d\n", Max(first));
     printf("Max is: %d\n", Max2(first));
     printf("Max recursive is: %d\n", MaxR(first));
-    return 0;
+    struct Node* n = Search(first, 17);
+    if(n != NULL)
+        printf("The result is %d\n", n->value);
+    else
+        printf("Not found\n");
+
+    Display(first);
+    struct Node* n2 = SearchRec(first, 22);
+    if(n2 != NULL)
+        printf("The result is %d\n", n2->value);
+    else
+        printf("Not found\n");
+    */
+    Insert(first, 0, 10);
+    Display(first);
+    Insert(first, 1, 13);
+    Display(first);
+    Insert(first, 2, 2);
+    Display(first);
     return 0;
 }
