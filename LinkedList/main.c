@@ -4,7 +4,7 @@
 struct Node{
     int value;
     struct Node *next;
-}*first = NULL;
+}*first = NULL, *last = NULL;
 
 void create(int A[], int n){
     int i;
@@ -159,6 +159,41 @@ void Insert(struct Node *c, int pos, int val){
 
 }
 
+
+void InsertLast(int val){
+    struct Node *n = (struct Node *)malloc(sizeof(struct Node));
+    n->value = val;
+    n->next = NULL;
+    if(first == NULL){
+        first = last = n;
+    }
+    else{
+        last->next = n;
+        last = n;
+    }
+}
+
+void InsertInSortedList(int val){
+    struct Node* c = first;
+    struct Node* p;
+    struct Node *n = (struct Node *)malloc(sizeof(struct Node));
+    n->value = val;
+    n->next = NULL;
+    if(first == NULL){
+        first = n;
+    } else if(val < first->value){
+        n ->next = first;
+        first = n;
+    } else{
+        while(c != NULL && val > c->value){
+            p = c;
+            c = c->next;
+        }
+        p->next = n;
+        n->next = c;
+    }
+}
+
 int main()
 {
     /*
@@ -188,12 +223,34 @@ int main()
         printf("The result is %d\n", n2->value);
     else
         printf("Not found\n");
-    */
+
     Insert(first, 0, 10);
     Display(first);
     Insert(first, 1, 13);
     Display(first);
     Insert(first, 2, 2);
+    Display(first);
+    Insert(first, 0, 8);
+    Display(first);
+
+    InsertLast(3);
+    Display(first);
+    InsertLast(5);
+    Display(first);
+    InsertLast(10);
+    Display(first);
+     */
+    InsertInSortedList(4);
+    Display(first);
+    InsertInSortedList(2);
+    Display(first);
+    InsertInSortedList(17);
+    Display(first);
+    InsertInSortedList(0);
+    Display(first);
+    InsertInSortedList(3);
+    Display(first);
+    InsertInSortedList(5);
     Display(first);
     return 0;
 }
