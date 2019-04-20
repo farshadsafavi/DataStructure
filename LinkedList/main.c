@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<limits.h>
+#include<stdbool.h>
 struct Node{
     int value;
     struct Node *next;
@@ -194,6 +195,43 @@ void InsertInSortedList(int val){
     }
 }
 
+int Delete(struct Node *c, int pos){
+    int x;
+    if(pos < 0 || pos > Count(first) || c == NULL)
+        return -1;
+    if(pos == 0){
+        c = first;
+        x = first->value;
+        first = first->next;
+        free(c);
+        return x;
+    } else{
+        int i = 0;
+        struct Node *p;
+        for(i = 0; i < pos && c; i++){
+            p = c;
+            c = c->next;
+        }
+        x = c->value;
+        p->next = c->next;
+        free(c);
+        return x;
+    }
+}
+
+bool isSorted(struct Node *c){
+    int temp = INT_MIN;
+    while(c){
+        if(temp > c->value){
+            return false;
+        }
+        temp = c->value;
+        c = c->next;
+    }
+    return true;
+}
+
+
 int main()
 {
     /*
@@ -240,6 +278,29 @@ int main()
     InsertLast(10);
     Display(first);
      */
+    printf("Linked List:\n");
+    int A[] = {3, 5, 7, 32, 15, 17 , 18 , 19};
+    create(A, 8);
+    Display(first);
+    if(isSorted(first)){
+        printf("It is sorted!\n");
+    } else{
+        printf("It is NOT sorted!\n");
+    }
+
+    Delete(first, 0);
+    Display(first);
+    Delete(first, 3);
+    Display(first);
+    Delete(first, 3);
+    Display(first);
+    Delete(first, 0);
+    Display(first);
+    Delete(first, 0);
+    Display(first);
+    Delete(first, 0);
+    Display(first);
+
     InsertInSortedList(4);
     Display(first);
     InsertInSortedList(2);
@@ -252,5 +313,10 @@ int main()
     Display(first);
     InsertInSortedList(5);
     Display(first);
+    if(isSorted(first)){
+        printf("It is sorted!\n");
+    } else{
+        printf("It is NOT sorted!\n");
+    }
     return 0;
 }
