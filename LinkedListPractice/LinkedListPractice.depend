@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1555895056 source:c:\users\farshad\desktop\datastructure\linkedlistpractice\main.cpp
+	<iostream>
+	<LinkedList.h>
+
+1555895115 source:c:\users\farshad\desktop\datastructure\linkedlistpractice\src\linkedlist.cpp
+	"LinkedList.h"
+
+1555894934 c:\users\farshad\desktop\datastructure\linkedlistpractice\include\linkedlist.h
+	<Node.h>
+	<iostream>
+
+1555893440 c:\users\farshad\desktop\datastructure\linkedlistpractice\include\node.h
+

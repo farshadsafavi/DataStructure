@@ -231,6 +231,44 @@ bool isSorted(struct Node *c){
     return true;
 }
 
+void RemoveDuplicate(struct Node *c){
+    struct Node *p;
+    p = c;
+    c = c->next;
+    while(c != NULL){
+        if(p->value == c->value){
+            p->next = c->next;
+            free(c);
+            c = p->next;
+        } else{
+            p = c;
+            c = c->next;
+        }
+    }
+}
+
+void Reverse(struct Node *c){
+    struct Node *p, *pp;
+    c = first;
+    p = NULL;
+    pp = NULL;
+    while(c != NULL){
+       pp = p;
+       p = c;
+       c = c->next;
+       p->next = pp;
+    }
+    first = p;
+}
+
+void ReverseRec(struct Node *p, struct Node *c){
+    if(c != NULL){
+        ReverseRec(c, c->next);
+        c->next = p;
+    } else{
+        first = p;
+    }
+}
 
 int main()
 {
@@ -277,7 +315,7 @@ int main()
     Display(first);
     InsertLast(10);
     Display(first);
-     */
+
     printf("Linked List:\n");
     int A[] = {3, 5, 7, 32, 15, 17 , 18 , 19};
     create(A, 8);
@@ -299,7 +337,7 @@ int main()
     Delete(first, 0);
     Display(first);
     Delete(first, 0);
-    Display(first);
+    Display(first);*/
 
     InsertInSortedList(4);
     Display(first);
@@ -307,7 +345,17 @@ int main()
     Display(first);
     InsertInSortedList(17);
     Display(first);
+    InsertInSortedList(17);
+    Display(first);
+    InsertInSortedList(17);
+    Display(first);
     InsertInSortedList(0);
+    Display(first);
+    InsertInSortedList(3);
+    Display(first);
+    InsertInSortedList(3);
+    Display(first);
+    InsertInSortedList(3);
     Display(first);
     InsertInSortedList(3);
     Display(first);
@@ -318,5 +366,11 @@ int main()
     } else{
         printf("It is NOT sorted!\n");
     }
+    RemoveDuplicate(first);
+    Display(first);
+    Reverse(first);
+    Display(first);
+    ReverseRec(NULL, first);
+    Display(first);
     return 0;
 }
