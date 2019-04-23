@@ -5,7 +5,7 @@
 struct Node{
     int value;
     struct Node *next;
-}*first = NULL, *last = NULL;
+}*first = NULL, *last = NULL, *second = NULL;
 
 void create(int A[], int n){
     int i;
@@ -23,6 +23,25 @@ void create(int A[], int n){
             last = newNode;
         }
     }
+}
+
+void create2(int A[],int n)
+{
+     int i;
+     struct Node *t,*last;
+     second=(struct Node *)malloc(sizeof(struct Node));
+     second->value=A[0];
+     second->next=NULL;
+     last=second;
+
+     for(i=1;i<n;i++)
+     {
+         t=(struct Node*)malloc(sizeof(struct Node));
+         t->value=A[i];
+         t->next=NULL;
+         last->next=t;
+         last=t;
+     }
 }
 
 void Display(struct Node *p){
@@ -96,6 +115,7 @@ int Max(struct Node *p){
 int Max2(struct Node *p){
     Max3(p, INT_MIN);
 }
+
 int Max3(struct Node *p,int max){
     if(p == NULL){
         return max;
@@ -270,6 +290,36 @@ void ReverseRec(struct Node *p, struct Node *c){
     }
 }
 
+struct Node* Merge(struct Node *p,struct Node *q){
+    struct Node *third, *last;
+    if(q->value < p->value){
+        third = last = q;
+        q = q->next;
+        third->next = NULL;
+    } else{
+        third = last = p;
+        p = p ->next;
+        third->next = NULL;
+    }
+    while(p && q){
+        if(q->value < p->value){
+            last->next = q;
+            last = last->next;
+            q = q->next;
+            last->next = NULL;
+        } else{
+            last->next = p;
+            last = last->next;
+            p = p->next;
+            last->next = NULL;
+        }
+    }
+    if(q) last->next = q;
+    if(p) last->next = p;
+
+    return third;
+}
+
 int main()
 {
     /*
@@ -287,7 +337,7 @@ int main()
     printf("Max is: %d\n", Max(first));
     printf("Max is: %d\n", Max2(first));
     printf("Max recursive is: %d\n", MaxR(first));
-    struct Node* n = Search(first, 17);
+    struct Node* n = Search(first, 17);struct Node *third
     if(n != NULL)
         printf("The result is %d\n", n->value);
     else
@@ -337,7 +387,7 @@ int main()
     Delete(first, 0);
     Display(first);
     Delete(first, 0);
-    Display(first);*/
+    Display(first);
 
     InsertInSortedList(4);
     Display(first);
@@ -371,6 +421,16 @@ int main()
     Reverse(first);
     Display(first);
     ReverseRec(NULL, first);
+    Display(first);*/
+    int A[]={10,20,40,50,60};
+    int B[]={15,18,25,30,55};
+    create(A,5);
+    create2(B,5);
     Display(first);
+    Display(second);
+
+    struct Node *third = Merge(first, second);
+    Display(third);
+
     return 0;
 }
