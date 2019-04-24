@@ -320,6 +320,19 @@ struct Node* Merge(struct Node *p,struct Node *q){
     return third;
 }
 
+int isLoop(struct Node *f){
+    struct Node *p = f;
+    struct Node *q = f;
+
+    do{
+        p = p->next;
+        q = q->next;
+        q = q ? q->next:q;
+    }while(p != q && p && q);
+
+    return p == q ? true:false;
+}
+
 int main()
 {
     /*
@@ -421,7 +434,7 @@ int main()
     Reverse(first);
     Display(first);
     ReverseRec(NULL, first);
-    Display(first);*/
+    Display(first);
     int A[]={10,20,40,50,60};
     int B[]={15,18,25,30,55};
     create(A,5);
@@ -430,7 +443,18 @@ int main()
     Display(second);
 
     struct Node *third = Merge(first, second);
-    Display(third);
+    Display(third);*/
+
+    struct Node *t1,*t2;
+
+    int A[]={10,20,30,40,50};
+    create(A,5);
+
+    t1=first->next->next;
+    t2=first->next->next->next->next;
+    t2->next=t1;
+
+    printf("it is loop %d\n",isLoop(first));
 
     return 0;
 }
