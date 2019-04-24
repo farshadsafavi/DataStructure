@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1556149789 source:c:\users\farshad\desktop\datastructure\circularlinkedlist\main.c
+	<stdio.h>
+	<stdlib.h>
+
