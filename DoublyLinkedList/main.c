@@ -70,6 +70,44 @@ void Insert(struct Node *c, int index, int x){
     }
 }
 
+void Reverse(struct Node *c){
+    struct Node *temp;
+    if (c->next == NULL) return;
+    while(c != NULL){
+        temp = c->prev;
+        c->prev = c->next;
+        c->next = temp;
+        if(c->prev == NULL){
+            first = c;
+        }
+        c = c->prev;
+    }
+}
+
+int Delete(struct Node *c, int index){
+    int i = 0;
+    int x;
+    if(index <= 0 || index > Length(c)){
+        return -1;
+    }
+    if(index == 1){
+        x = first->data;
+        first = first->next;
+        if(first) first->prev = NULL;
+        free(c);
+    } else{
+        for(i = 0; i < index - 1; i++){
+            c = c->next;
+        }
+        x = c->data;
+        c->prev->next = c->next;
+        if(c->next)
+            c->next->prev = c->prev;
+        free(c);
+    }
+    return x;
+}
+
 int main()
 {
     printf("Doubly LinkedList!\n");
@@ -83,6 +121,18 @@ int main()
     Insert(first, 2, 2);
     Insert(first, 3, 2);
     Insert(first, 4, 2);
+    Display(first);
+    Reverse(first);
+    Display(first);
+    Delete(first, 1);
+    Display(first);
+    Delete(first, 4);
+    Display(first);
+    Delete(first, 2);
+    Display(first);
+    Delete(first, 2);
+    Display(first);
+    printf("%d", Delete(first, 1));
     Display(first);
 
     return 0;
