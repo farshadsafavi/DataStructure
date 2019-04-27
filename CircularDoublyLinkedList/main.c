@@ -100,6 +100,23 @@ int Delete(struct Node *c, int index){
     return x;
 }
 
+int MiddleNode(struct Node *c){
+    struct Node *p, *q;
+    p = c;
+    q = c->next;
+    if(p == q) {
+        printf("The middle is: %d\n", p->data);
+        return p->data;
+    }
+    while(q != last){
+        p = p->next;
+        q = q->next;
+        q = q != last ? q->next : last;
+    }
+    printf("The middle is: %d\n", p->data);
+    return p->data;
+}
+
 
 int main()
 {
@@ -108,14 +125,27 @@ int main()
     Display(first);
     Insert(first, 0, 2);
     Display(first);
+    MiddleNode(first);
     Insert(first, 0, 3);
     Display(first);
+    MiddleNode(first);
+
     Insert(first, 1, 8);
     Display(first);
+    MiddleNode(first);
+
     Insert(first, 2, 0);
     Display(first);
+    MiddleNode(first);
+
     Insert(first, 5, 10);
     Display(first);
+    MiddleNode(first);
+
+    Insert(first, 5, 11);
+    Display(first);
+    MiddleNode(first);
+    /*
     Delete(first, 6);
     Display(first);
     Delete(first, 2);
@@ -127,6 +157,6 @@ int main()
     Delete(first, 1);
     Display(first);
     Delete(first, 1);
-    Display(first);
+    Display(first);*/
     return 0;
 }
