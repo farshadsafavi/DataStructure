@@ -333,6 +333,32 @@ int isLoop(struct Node *f){
     return p == q ? true:false;
 }
 
+int FindMiddle(struct Node *c){
+    struct Node *p, *q;
+    p = q = c;
+    q = q->next;
+    q = q ? q->next: NULL;
+    while(q != NULL){
+        p = p->next;
+        q = q->next;
+        q = q ? q->next: NULL;
+    }
+    printf("The middle number is: %d\n", p->value);
+    return p->value;
+}
+
+int FindMiddle2(struct Node *c){
+    struct Node *p, *q;
+    p = q = c;
+    while(q != NULL){
+        q = q->next;
+        if(q) q = q->next;
+        if(q) p = p->next;
+    }
+    printf("The middle number is: %d\n", p->value);
+    return p->value;
+}
+
 int main()
 {
     /*
@@ -435,16 +461,20 @@ int main()
     Display(first);
     ReverseRec(NULL, first);
     Display(first);
-    int A[]={10,20,40,50,60};
+    */
+    int A[]={10,20,30,40,50};
     int B[]={15,18,25,30,55};
     create(A,5);
     create2(B,5);
     Display(first);
+    FindMiddle2(first);
     Display(second);
+    FindMiddle2(second);
 
     struct Node *third = Merge(first, second);
-    Display(third);*/
-
+    Display(third);
+    FindMiddle2(third);
+    /*
     struct Node *t1,*t2;
 
     int A[]={10,20,30,40,50};
@@ -454,7 +484,7 @@ int main()
     t2=first->next->next->next->next;
     t2->next=t1;
 
-    printf("it is loop %d\n",isLoop(first));
+    printf("it is loop %d\n",isLoop(first));*/
 
     return 0;
 }
