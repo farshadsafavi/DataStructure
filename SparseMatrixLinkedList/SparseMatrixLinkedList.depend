@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1556570945 source:c:\users\farshad\desktop\datastructure\sparsematrixlinkedlist\main.c
+	<stdio.h>
+	<stdlib.h>
+
