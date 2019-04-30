@@ -45,11 +45,11 @@ void Insert(struct Node *c, struct Node *n){
 
     }
 }
-// needs to be debugged
-long Evaluation(struct Node *c, int x){
-    long sum = 0;
+
+float Evaluation(struct Node *c, int x){
+    float sum = 0;
     while(c != NULL){
-        sum += c->coef*pow(x, c->exp);
+        sum += (float)c->coef*pow(x, c->exp);
         c = c->next;
     }
     return sum;
@@ -71,6 +71,6 @@ int main()
     scanf("%d", &m);
     Create(head, m);
     Display(head);
-    printf("Evaluation x = 5 is %ld\n", Evaluation(head, 5));
+    printf("Evaluation x = 2 is %f\n", Evaluation(head, 2));
     return 0;
 }
