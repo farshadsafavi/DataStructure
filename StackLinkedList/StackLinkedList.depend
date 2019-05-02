@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1556833004 source:c:\users\farshad\desktop\datastructure\stacklinkedlist\main.cpp
+	<iostream>
+	<Stack.h>
+
+1556831155 c:\users\farshad\desktop\datastructure\stacklinkedlist\include\stack.h
+	<iostream>
+	"implementation.h"
+
+1556829988 source:c:\users\farshad\desktop\datastructure\stacklinkedlist\src\stack.cpp
+	"Stack.h"
+
+1556831243 c:\users\farshad\desktop\datastructure\stacklinkedlist\include\implementation.h
+
