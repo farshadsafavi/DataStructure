@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1557084004 source:c:\users\farshad\desktop\datastructure\queuearray\src\queue.cpp
+	"Queue.h"
+
+1557089685 c:\users\farshad\desktop\datastructure\queuearray\include\queue.h
+	<iostream>
+	"implementation.h"
+
+1557091212 source:c:\users\farshad\desktop\datastructure\queuearray\main.cpp
+	<iostream>
+	<Queue.h>
+
+1557091974 c:\users\farshad\desktop\datastructure\queuearray\include\implementation.h
+
