@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1557012012 source:c:\users\farshad\desktop\datastructure\postfixoperation\main.cpp
+1557014523 source:c:\users\farshad\desktop\datastructure\postfixoperation\main.cpp
 	<iostream>
 	<stack>
+	<math.h>
 
