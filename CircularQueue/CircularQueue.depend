@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1557170146 source:c:\users\farshad\desktop\datastructure\circularqueue\main.cpp
+	<iostream>
+	<CircularQueue.h>
+
+1557164724 c:\users\farshad\desktop\datastructure\circularqueue\include\circularqueue.h
+	<iostream>
+
+1557170458 source:c:\users\farshad\desktop\datastructure\circularqueue\src\circularqueue.cpp
+	"CircularQueue.h"
+
