@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1557178465 source:c:\users\farshad\desktop\datastructure\queuelinkedlist\main.cpp
+	<iostream>
+	<Queue.h>
+
+1557178486 source:c:\users\farshad\desktop\datastructure\queuelinkedlist\src\queue.cpp
+	"Queue.h"
+
+1557177982 c:\users\farshad\desktop\datastructure\queuelinkedlist\include\queue.h
+	<iostream>
+
