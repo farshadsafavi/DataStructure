@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1557270411 source:c:\users\farshad\desktop\datastructure\queueusingstack\main.cpp
+	<iostream>
+	<Queue.h>
+
+1557270752 source:c:\users\farshad\desktop\datastructure\queueusingstack\src\queue.cpp
+	"Queue.h"
+
+1557270104 c:\users\farshad\desktop\datastructure\queueusingstack\include\queue.h
+	<stack>
+	<iostream>
+
