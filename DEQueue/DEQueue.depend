@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1557260244 source:c:\users\farshad\desktop\datastructure\dequeue\main.cpp
+	<iostream>
+	<QueueArray.h>
+	<QueueLinkedList.h>
+
+1557255258 source:c:\users\farshad\desktop\datastructure\dequeue\src\queuearray.cpp
+	"QueueArray.h"
+
+1557254692 c:\users\farshad\desktop\datastructure\dequeue\include\queuearray.h
+	<iostream>
+
+1557258845 c:\users\farshad\desktop\datastructure\dequeue\include\queuelinkedlist.h
+	<iostream>
+
+1557260472 source:c:\users\farshad\desktop\datastructure\dequeue\src\queuelinkedlist.cpp
+	"QueueLinkedList.h"
+
