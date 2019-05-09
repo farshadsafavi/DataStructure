@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1557432875 source:c:\users\farshad\desktop\datastructure\binarytree\main.cpp
+	<iostream>
+	<BT.h>
+
+1557433587 source:c:\users\farshad\desktop\datastructure\binarytree\src\bt.cpp
+	"BT.h"
+
+1557431933 c:\users\farshad\desktop\datastructure\binarytree\include\bt.h
+	<queue>
+	<iostream>
+
