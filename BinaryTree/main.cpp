@@ -6,9 +6,14 @@ int main()
 {
     cout << "Hello world!" << endl;
 
+
     BT bt;
     bt.create();
-    bt.Display();
+    //bt.Display();
+    //bt.PreorderIter();
+    //bt.InorderIter();
+    bt.PostorderIter();
+    bt.PostorderIter2();
 
 
     return 0;
