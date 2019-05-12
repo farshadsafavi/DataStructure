@@ -25,6 +25,7 @@ class BT
         void InorderIter();
         void PostorderIter();
         void PostorderIter2();
+        void Levelorder();
         virtual ~BT();
 };
 

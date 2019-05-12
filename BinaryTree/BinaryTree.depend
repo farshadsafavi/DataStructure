@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1557596232 source:c:\users\farshad\desktop\datastructure\binarytree\main.cpp
+1557699498 source:c:\users\farshad\desktop\datastructure\binarytree\main.cpp
 	<iostream>
 	<BT.h>
 
-1557596208 source:c:\users\farshad\desktop\datastructure\binarytree\src\bt.cpp
+1557699498 source:c:\users\farshad\desktop\datastructure\binarytree\src\bt.cpp
 	"BT.h"
 
-1557592461 c:\users\farshad\desktop\datastructure\binarytree\include\bt.h
+1557699191 c:\users\farshad\desktop\datastructure\binarytree\include\bt.h
 	<list>
 	<stack>
 	<iostream>

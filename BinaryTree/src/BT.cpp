@@ -143,6 +143,22 @@ void BT::InorderIter(){
     cout <<"\n";
 }
 
+void BT::Levelorder(){
+    Node *c = root;
+    list<Node *> Q;
+    Q.push_back(c);
+    while(!Q.empty()){
+        c = Q.front();
+        Q.pop_front();
+        if(c->left)
+            Q.push_back(c->left);
+        if(c->right)
+            Q.push_back(c->right);
+        cout <<c->data <<" ";
+    }
+    cout <<"\n";
+}
+
 BT::~BT()
 {
     delete this->root;

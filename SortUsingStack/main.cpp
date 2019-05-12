@@ -2,16 +2,24 @@
 #include<stack>
 using namespace std;
 
-int findMin(stack<int> &s1, stack<int> &s2, int top){
-    int minimum = s1.top();
+stack<int> sortStack(stack<int> s1){
+    stack<int> s2;
     while(!s1.empty()){
-        s2.push(s1.top());
-        if(minimum > s1.top() && minimum ){
-            minimum = s1.top();
-        }
+        int c = s1.top();
         s1.pop();
+        while(!s2.empty() && s2.top() > c){
+            int p = s2.top();
+            s2.pop();
+            s1.push(p);
+        }
+        s2.push(c);
     }
-    return minimum;
+    while(!s2.empty()){
+        int c = s2.top();
+        s2.pop();
+        s1.push(c);
+    }
+    return s1;
 }
 
 int main()
@@ -25,11 +33,12 @@ int main()
     s1.push(9);
     s1.push(11);
 
-    stack<int> s2;
-    while(){
-        cout << findMin(s1, s2) <<endl;
+    s1 = sortStack(s1);
+    while(!s1.empty()){
+        int c = s1.top();
+        s1.pop();
+        cout <<c << " ";
     }
-
-    cout << s2.top() <<endl;
+    cout << endl;
     return 0;
 }

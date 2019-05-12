@@ -12,9 +12,9 @@ int main()
     //bt.Display();
     //bt.PreorderIter();
     //bt.InorderIter();
-    bt.PostorderIter();
-    bt.PostorderIter2();
-
+    //bt.PostorderIter();
+    //bt.PostorderIter2();
+    bt.Levelorder();
 
     return 0;
 }

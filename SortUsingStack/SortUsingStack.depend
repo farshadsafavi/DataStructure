@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1557702414 source:c:\users\farshad\desktop\datastructure\sortusingstack\main.cpp
+	<iostream>
+	<stack>
+
