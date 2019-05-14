@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1557786652 source:c:\users\farshad\desktop\datastructure\generatetreefromtraversals\main.cpp
+1557862979 source:c:\users\farshad\desktop\datastructure\generatetreefromtraversals\main.cpp
 	<iostream>
 	<BT.h>
 
-1557787051 source:c:\users\farshad\desktop\datastructure\generatetreefromtraversals\src\bt.cpp
+1557863599 source:c:\users\farshad\desktop\datastructure\generatetreefromtraversals\src\bt.cpp
 	"BT.h"
 
-1557786043 c:\users\farshad\desktop\datastructure\generatetreefromtraversals\include\bt.h
+1557861134 c:\users\farshad\desktop\datastructure\generatetreefromtraversals\include\bt.h
 	<iostream>
 

@@ -19,5 +19,13 @@ int main()
     int i = 8;
     root = bt1.BuildTreePost(Inorder, post, 0, 8, &i);
     bt1.Display(root);
+    cout << endl;
+    cout <<"Number node is:" << bt1.NumberOfNodes(root) << endl;
+    cout <<"Sum is:" << bt1.Sum(root) << endl;
+    cout <<"Height is:" << bt1.Height(root) << endl;
+    cout <<"Number one degree nodes is:" << bt1.NumberOfOneDegreeNodes(root) << endl;
+    cout <<"Number two degree nodes is:" << bt1.NumberOfTwoDegreeNodes(root) << endl;
+    cout <<"Number of leafs:" << bt1.NumberOfLeafs(root)<< endl;
+
     return 0;
 }

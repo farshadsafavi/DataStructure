@@ -62,6 +62,89 @@ void BT::Display(Node *c){
     }
 }
 
+int BT::NumberOfNodes(Node *c){
+    int x = 0;
+    int y = 0;
+    if(c){
+       x = NumberOfNodes(c->left);
+       y = NumberOfNodes(c->right);
+       return x + y + 1;
+    }
+    return 0;
+}
+
+int BT::NumberOfTwoDegreeNodes(Node *c){
+    int x = 0;
+    int y = 0;
+    if(c){
+        x = NumberOfTwoDegreeNodes(c->left);
+        y = NumberOfTwoDegreeNodes(c->right);
+        if(c->left != nullptr && c->right != nullptr){
+            return x + y + 1;
+        } else{
+            return y + x;
+        }
+    }
+    return 0;
+}
+
+int BT::NumberOfOneDegreeNodes(Node *c){
+    int x = 0;
+    int y = 0;
+    if(c){
+        x = NumberOfOneDegreeNodes(c->left);
+        y = NumberOfOneDegreeNodes(c->right);
+        // c->left != nullptr ^ c->right != nullptr
+        if((c->left != nullptr && c->right == nullptr) || (c->left == nullptr && c->right != nullptr)){
+            return x + y + 1;
+        } else{
+            return y + x;
+        }
+    }
+    return 0;
+}
+
+int BT::NumberOfLeafs(Node *c){
+    int x = 0;
+    int y = 0;
+    if(c){
+        x = NumberOfLeafs(c->left);
+        y = NumberOfLeafs(c->right);
+        if(x == 0 && y == 0){
+            return x + y + 1;
+        } else{
+            return y + x;
+        }
+    }
+    return 0;
+}
+
+int BT::Height(Node *c){
+    int x = 0;
+    int y = 0;
+    if(c){
+        x = Height(c->left);
+        y = Height(c->right);
+        if(x > y){
+            return x + 1;
+        } else{
+            return y + 1;
+        }
+    }
+    return 0;
+}
+
+int BT::Sum(Node* c){
+    int x = 0;
+    int y = 0;
+    if(c){
+        x = Sum(c->left);
+        y = Sum(c->right);
+        return x + y + c->data;
+    }
+    return 0;
+}
+
 BT::~BT()
 {
     delete root;

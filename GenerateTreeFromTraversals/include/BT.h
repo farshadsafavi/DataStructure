@@ -22,6 +22,12 @@ class BT
         int SearchIndex(int Pre[], int Start,int End, int r);
         void Display(Node* c);
         void Display();
+        int NumberOfNodes(Node *c);
+        int NumberOfOneDegreeNodes(Node *c);
+        int NumberOfTwoDegreeNodes(Node *c);
+        int NumberOfLeafs(Node *c);
+        int Height(Node *c);
+        int Sum(Node *c);
         virtual ~BT();
 };
 
