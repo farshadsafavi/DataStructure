@@ -132,6 +132,90 @@ void BST::Display(){
     cout << endl;
 }
 
+
+Node* BST::Delete(int data){
+    if(root != nullptr){
+        return Delete(root, data);
+    }
+    return nullptr;
+}
+
+Node* BST::Delete(Node *c, int data){
+    Node* q;
+    if(c == nullptr){
+        return nullptr;
+    }
+
+    if(c->left == nullptr && c->right == nullptr){
+        if(c == root)
+            delete(root);
+        delete(c);
+        return nullptr;
+    }
+
+    if(data < c->data){
+        c->left = Delete(c->left, data);
+    } else if (data > c->data){
+        c->right = Delete(c->right, data);
+    } else{
+        if(Height(c->left) > Height(c->right)){
+            q = InordrePredecessor(c->left);
+            c->data = q->data;
+            c->left = Delete(c->left, q->data);
+        } else{
+            q = InorderSuccessor(c->right);
+            c->data = q->data;
+            c->right = Delete(c->right, q->data);
+        }
+    }
+    return c;
+
+}
+
+Node* BST::InordrePredecessor(Node *n){
+    Node *c = n;
+    Node *p = c;
+    while(c != nullptr){
+        p = c;
+        c = c->right;
+    }
+    return p;
+}
+
+Node* BST::InorderSuccessor(Node *n){
+    Node *c = n;
+    Node *p = c;
+    while(c != nullptr){
+        p = c;
+        c = c->left;
+    }
+    return p;
+}
+
+int BST::Height(Node *c){
+    int x = 0;
+    int y = 0;
+    if(c != nullptr){
+        x = Height(c->left);
+        y = Height(c->right);
+        if(x > y){
+            return x + 1;
+        } else{
+            return y + 1;
+        }
+    }
+    return 0;
+}
+
+int BST::Height(){
+    if(root != nullptr){
+        return Height(root);
+    }
+    return 0;
+}
+
+
+
 BST::~BST()
 {
     //dtor

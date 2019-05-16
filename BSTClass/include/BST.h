@@ -13,18 +13,23 @@ class BST
 {
     private:
         Node *root;
+        Node* Delete(Node* c, int data);
+        bool Search(Node* c, int data);
+        void Display(Node* c);
+        void Insert(Node*c, int data);
+        int Height(Node *c);
+        Node* InordrePredecessor(Node *c);
+        Node* InorderSuccessor(Node *c);
     public:
         BST();
-        void Insert(Node*c, int data);
         void Insert(int data);
         void InsertIter(int data);
         void Display();
-        void Display(Node* c);
-        bool Search(Node* c, int data);
-        bool Search(int data);
         bool SearchIter(int data);
+        bool Search(int data);
+        Node* Delete(int data);
+        int Height();
         virtual ~BST();
-
 
 };
 

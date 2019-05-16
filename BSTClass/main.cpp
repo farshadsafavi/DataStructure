@@ -31,6 +31,23 @@ int main()
         cout<<"78 Not exist"<<endl;
 
     bst.Display();
+    cout <<"Height is:"<<bst.Height() <<endl;
 
+
+
+    bst.Delete(7);
+    bst.Display();
+    bst.Delete(4);
+    bst.Display();
+    bst.Delete(2);
+    bst.Display();
+    bst.Delete(11);
+    bst.Display();
+    bst.Delete(18);
+    bst.Display();
+    bst.Delete(22);
+    bst.Display();
+    bst.Delete(45);
+    bst.Display();
     return 0;
 }
