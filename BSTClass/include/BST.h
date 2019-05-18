@@ -1,6 +1,6 @@
 #ifndef BST_H
 #define BST_H
-
+#include<stack>
 #include<iostream>
 using namespace std;
 struct Node{
@@ -29,6 +29,7 @@ class BST
         bool Search(int data);
         Node* Delete(int data);
         int Height();
+        void CreatePre(int pre[], int n);
         virtual ~BST();
 
 };

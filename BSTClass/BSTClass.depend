@@ -1,11 +1,13 @@
 # depslib dependency file v1.0
-1558040017 source:c:\users\farshad\desktop\datastructure\bstclass\main.cpp
+1558138021 source:c:\users\farshad\desktop\datastructure\bstclass\main.cpp
 	<iostream>
 	<BST.h>
+	<stack>
 
-1558038001 c:\users\farshad\desktop\datastructure\bstclass\include\bst.h
+1558136209 c:\users\farshad\desktop\datastructure\bstclass\include\bst.h
+	<stack>
 	<iostream>
 
-1558039991 source:c:\users\farshad\desktop\datastructure\bstclass\src\bst.cpp
+1558138262 source:c:\users\farshad\desktop\datastructure\bstclass\src\bst.cpp
 	"BST.h"
 

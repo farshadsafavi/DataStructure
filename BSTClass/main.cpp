@@ -1,10 +1,12 @@
 #include <iostream>
 #include<BST.h>
 using namespace std;
+#include<stack>
 
 int main()
 {
     cout << "Binary Search Tree:" << endl;
+
     BST bst;
     bst.InsertIter(10);
     bst.InsertIter(7);
@@ -48,6 +50,10 @@ int main()
     bst.Delete(22);
     bst.Display();
     bst.Delete(45);
+    bst.Display();
+
+    int pre[8] = {30, 20, 10, 15, 25, 40, 50, 45};
+    bst.CreatePre(pre, 8);
     bst.Display();
     return 0;
 }

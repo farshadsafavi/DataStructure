@@ -214,7 +214,37 @@ int BST::Height(){
     return 0;
 }
 
-
+void BST::CreatePre(int pre[], int n){
+    int i = 0;
+    stack<Node*> stk;
+    Node *c = nullptr;
+    while(i < n){
+        Node *t = new Node();
+        t->left = nullptr;
+        t->right = nullptr;
+        t->data = pre[i];
+        if(c == nullptr){
+            c = t;
+            root = t;
+            stk.push(t);
+            i++;
+        }else if(pre[i] < c->data){
+            c->left = t;
+            stk.push(t);
+            c = c->left;
+            i++;
+        } else if(stk.empty() || pre[i] > c->data && pre[i] < stk.top()->data){
+            c->right = t;
+            c = c->right;
+            i++;
+        } else {
+            if(!stk.empty() && pre[i] > c->data && pre[i] > stk.top()->data){
+                c = stk.top();
+                stk.pop();
+            }
+        }
+    }
+}
 
 BST::~BST()
 {
