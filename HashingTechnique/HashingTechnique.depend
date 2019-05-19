@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1558295228 source:c:\users\farshad\desktop\datastructure\hashingtechnique\main.cpp
+	<iostream>
+	<HashTableLL.h>
+
+1558291217 source:c:\users\farshad\desktop\datastructure\hashingtechnique\src\hashtable.cpp
+	"HashTable.h"
+
+1558292354 c:\users\farshad\desktop\datastructure\hashingtechnique\include\hashtable.h
+
+1558295293 source:c:\users\farshad\desktop\datastructure\hashingtechnique\src\hashtablell.cpp
+	"HashTableLL.h"
+
+1558294777 c:\users\farshad\desktop\datastructure\hashingtechnique\include\hashtablell.h
+	<list>
+	<iterator>
+	<iostream>
+

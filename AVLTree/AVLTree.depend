@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1558226260 source:c:\users\farshad\desktop\datastructure\avltree\main.cpp
+	<iostream>
+	<AVL.h>
+
+1558227314 source:c:\users\farshad\desktop\datastructure\avltree\src\avl.cpp
+	"AVL.h"
+
+1558226485 c:\users\farshad\desktop\datastructure\avltree\include\avl.h
+	<iostream>
+
