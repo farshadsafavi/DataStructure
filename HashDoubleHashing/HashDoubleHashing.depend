@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1558381662 source:c:\users\farshad\desktop\datastructure\hashdoublehashing\main.cpp
+	<iostream>
+	<HashTable.h>
+
+1558381715 c:\users\farshad\desktop\datastructure\hashdoublehashing\include\hashtable.h
+	<iostream>
+
+1558381874 source:c:\users\farshad\desktop\datastructure\hashdoublehashing\src\hashtable.cpp
+	"HashTable.h"
+
