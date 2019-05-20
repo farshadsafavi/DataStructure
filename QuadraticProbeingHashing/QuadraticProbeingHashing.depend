@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1558380057 source:c:\users\farshad\desktop\datastructure\quadraticprobeinghashing\main.cpp
+	<iostream>
+	<QudraticProbing.h>
+
+1558380057 source:c:\users\farshad\desktop\datastructure\quadraticprobeinghashing\src\qudraticprobing.cpp
+	"QudraticProbing.h"
+
+1558379931 c:\users\farshad\desktop\datastructure\quadraticprobeinghashing\include\qudraticprobing.h
+	<iostream>
+
